@@ -37,225 +37,139 @@ print(d("vwxyz"))
 
 ## Tugas Praktikum 6
 ![Screenshot (57)](https://user-images.githubusercontent.com/73010098/100837668-9a6bc600-34a3-11eb-941a-d4187e186637.png)
-## Penjelasan Praktikum 6
-1) Penggunaan if c.lower()
-
-if c.lower() fungsinya apabila user menginputkan denga huruf besar, maka otomatis akan menjadi huruf kecil sehingga kondisi yang digunakan tercapai. Contoh :
-
-if c.lower() == `q`
-
-2) Penggunaan while True
-
-while True berfungsi untuk mendeteksi jika format yang diinputkan bukan berupa type maka akan muncul error
-
-3) Penggunaan else
-
-Fungsi else jika tidak error dan type yang dimasukan sesuai maka proses while True
-
-4) Penggunaan valuveError
-
-   Fungsinya apabila diinputkan bukan berupa type maka hasil nya error (valueError) 
-   
 ## Syntax
-
-
 ```python
-P = print
-print("Masukan data mahasiswa")
-print("~~~~~~~~~~~~~~~~~~~~~~")
-nama = input("Masukan Nama Anda :")
-nim = int(input("Masukan NIM Anda :"))
-nilai_tugas = int(input("Masukan nilai tugas :"))
-nilai_uts = int(input("Masukan nilai uts :"))
-nilai_uas = int(input("Masukan nilai uas :"))
-while True:
-    P("")
-    P("")
-    c = input("L)ihat, T)ambah, U)bah, H)apus, C)ari, K)eluar: ")
-    if c.lower() == 'q':
-        break
-    elif c.lower() == 'l':
-        i = open('database.txt','r').read().splitlines()
-        P(" ╔═════════════════════════════════════════════════════════════════════╗")
-        P(" ╠════════════════════════════ DAFTAR KONTAK ══════════════════════════╣")
-        P(" ╠══════════════════╦══════════════════╦═══════╦═══════╦═══════╦═══════╣")
-        P(" ║      NAMA        ║       NIM        ║ TUGAS ║  UTS  ║  UAS  ║ AKHIR ║")
-        P(" ╠══════════════════╬══════════════════╬═══════╬═══════╬═══════╬═══════╣")
-        for l in i:
-            if l == '':
-                pass
-            else:
-                l1 = l.replace('Nama : ','').replace('Nim : ','').replace('Tugas : ','').replace('UTS : ','').replace('UAS : ','').replace('Akhir : ','')
-                na,ni,tu,uts,uas,akhir = l1.strip().split('|')
-                P((' ║ ')+(na[:15]).ljust(17,'.')+('║ ')+(ni).ljust(17)+('║ ')+(tu).ljust(6)+('║ ')+(uts).ljust(6)+('║ ')+(uas).ljust(6)+('║ ')+(akhir).ljust(6)+('║'))
-        P(" ╚══════════════════╩══════════════════╩═══════╩═══════╩═══════╩═══════╝")
-    elif c.lower() == 'c':
-        cari = input(' Mencari : ')
-        i = open('database.txt','r').read().splitlines()
-        P(" ╔═════════════════════════════════════════════════════════════════════╗")
-        P(" ╠════════════════════════════ DAFTAR KONTAK ══════════════════════════╣")
-        P(" ╠══════════════════╦══════════════════╦═══════╦═══════╦═══════╦═══════╣")
-        P(" ║      NAMA        ║       NIM        ║ TUGAS ║  UTS  ║  UAS  ║ AKHIR ║")
-        P(" ╠══════════════════╬══════════════════╬═══════╬═══════╬═══════╬═══════╣")
-        for l in i:
-            if l == '':
-                pass
-            elif cari in l:
-                l1 = l.replace('Nama : ','').replace('Nim : ','').replace('Tugas : ','').replace('UTS : ','').replace('UAS : ','').replace('Akhir : ','')
-                na,ni,tu,uts,uas,akhir = l1.strip().split('|')
-                P((' ║ ')+(na).ljust(17)+('║ ')+(ni).ljust(17)+('║ ')+(tu).ljust(6)+('║ ')+(uts).ljust(6)+('║ ')+(uas).ljust(6)+('║ ')+(akhir).ljust(6)+('║'))
-        P(" ╚══════════════════╩══════════════════╩═══════╩═══════╩═══════╩═══════╝")
-    elif c.lower() == 'h':
-        u = open('database.txt','r').read().splitlines()
-        target = input(' Masukan Nama : ')
-        nm = []
-        for l in u:
-            if l == '':
-                pass
-            else:
-                l1 = l.replace('Nama : ','').replace('Nim : ','').replace('Tugas : ','').replace('UTS : ','').replace('UAS : ','').replace('Akhir : ','')
-                na,ni,tu,uts,uas,akhir = l1.strip().split('|')
-                if str(na) == str(target):
-                    P('BERHASIL MENGHAPUS Data %s'%(target))
-                    pass
-                else:
-                    nm.append(str(l)+'\n')
-        new = open('database.txt','w')
-        new.write(str(nm))
-        new.close()
-        new = open('database.txt','r').read().splitlines()
-        new1 = open('database.txt','w')
-        new1.close()
-        new2 = open('database.txt','a')
-        for i in new:
-            i2 = i.replace("['","").replace("\\n', '", "\n").replace("']","").replace("\\n",'')
-            new2.write(i2)
-        new2.close()
-    elif c.lower() == 'u':
-        u = open('database.txt','r').read().splitlines()
-        target = input(' Masukan Nama : ')
-        nm = []
-        for l in u:
-            if l == '':
-                pass
-            else:
-                l1 = l.replace('Nama : ','').replace('Nim : ','').replace('Tugas : ','').replace('UTS : ','').replace('UAS : ','').replace('Akhir : ','')
-                na,ni,tu,uts,uas,akhir = l1.strip().split('|')
-                if na == target:
-                    P(' Mengedit Data %s'%(target))
-                    while (True):
-                        nama = input(" Nama : ")
-                        if nama == '':
-                            P(' Masukan dengan Nama Dengan Benar')
-                        else:
-                            break
-                    while (True):
-                        try:
-                            nim  = int(input(" NIM  : "))
-                            if nim == '':
-                                P(' Masukan Nim dengan Angka')
-                        except ValueError:
-                            P(' Masukan Nim dengan Angka')
-                        else:
-                            break
-                    while (True):
-                        try:
-                            tugas  = int(input(" TUGAS  : "))
-                            if tugas == '':
-                                P(' Masukan TUGAS dengan Angka')
-                        except ValueError:
-                            P(' Masukan TUGAS dengan Angka')
-                        else:
-                            break
-                    while (True):
-                        try:
-                            uts  = int(input(" UTS  : "))
-                            if uts == '':
-                                P(' Masukan UTS dengan Angka')
-                        except ValueError:
-                            P(' Masukan UTS dengan Angka')
-                        else:
-                            break
-                    while (True):
-                        try:
-                            uas  = int(input(" UAS  : "))
-                            if uas == '':
-                                P(' Masukan UAS dengan Angka')
-                        except ValueError:
-                            P(' Masukan UAS dengan Angka')
-                        else:
-                            break
-                    akhir = round((float(tugas) * 0.3)+(float(uts) * 0.35)+(float(uas) * 0.35),2)
-                    edit  =('Nama : '+nama+'|Nim : '+str(nim)+'|Tugas : '+str(tugas)+'|UTS : '+str(uts)+'|UAS : '+str(uas)+"|Akhir : "+str(akhir)+'\n')
-                    nm.append(edit+'\n')
-                else:
-                    nm.append(str(l)+'\n')
-        new = open('database.txt','w')
-        new.write(str(nm))
-        new.close()
-        new = open('database.txt','r').read().splitlines()
-        new1 = open('database.txt','w')
-        new1.close()
-        new2 = open('database.txt','a')
-        for i in new:
-            i2 = i.replace("['","").replace("\\n', '", "\n").replace("']","").replace("\\n","\n")
-            new2.write(i2+'\n')
-        new2.close()
-    elif c.lower() == 't':
-        i = open('database.txt','a')
-        P(" Tambah Kontak")
-        while (True):
-            nama = input(" Nama : ")
-            if nama == '':
-                P(' Masukan dengan Nama Dengan Benar')
-            else:
-                break
-        while (True):
-            try:
-                nim  = int(input(" NIM  : "))
-                if nim == '':
-                    P(' Masukan Nim dengan Angka')
-            except ValueError:
-                P(' Masukan Nim dengan Angka')
-            else:
-                break
-        while (True):
-            try:
-                tugas  = int(input(" TUGAS  : "))
-                if tugas == '':
-                    P(' Masukan TUGAS dengan Angka')
-            except ValueError:
-                P(' Masukan TUGAS dengan Angka')
-            else:
-                break
-        while (True):
-            try:
-                uts  = int(input(" UTS  : "))
-                if uts == '':
-                    P(' Masukan UTS dengan Angka')
-            except ValueError:
-                P(' Masukan UTS dengan Angka')
-            else:
-                break
-        while (True):
-            try:
-                uas  = int(input(" UAS  : "))
-                if uas == '':
-                    P(' Masukan UAS dengan Angka')
-            except ValueError:
-                P(' Masukan UAS dengan Angka')
-            else:
-                break
-        akhir = round((float(tugas) * 0.3)+(float(uts) * 0.35)+(float(uas) * 0.35),2)
-        i.write('\nNama : '+nama+'|Nim : '+str(nim)+'|Tugas : '+str(tugas)+'|UTS : '+str(uts)+'|UAS : '+str(uas)+"|Akhir : "+str(akhir)+'\n')
-        i.close()
-    else:
-        P("Silahkan pilih menu yang tersedia...")
-```
-## Ouput
-![Screenshot (48)](https://user-images.githubusercontent.com/73010098/100236228-f42e3680-2f5f-11eb-9973-7ff908c0ad4c.png)
+data = {}
 
-## Author Siti Latifah-312010321
+def tambah():
+    print("Tambah Data")
+    nama = input("Nama\t\t: ")
+    nim = int(input("NIM\t\t\t: "))
+    tugas = int(input("NIlai Tugas\t: "))
+    uts = int(input("Nilai UTS\t: "))
+    uas = int(input("Nilai UAS\t: "))
+    nilaiakhir = (tugas * 0.3 + uts * 0.35 + uas * 0.35)
+    data[nama] = nim, tugas, uts, uas, nilaiakhir
+
+
+def tampilkan():
+    if data.items():
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| Daftar Nilai |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("_______________________________________________________________________________________")
+        print("|  No  |      NIM      |      NAMA         |    TUGAS   |   UTS   |   UAS   | AKHIR  |")
+        print("|______|_______________|___________________|____________|_________|_________|________|__")
+        i = 0
+        for a in data.items():
+            i += 1
+            print(f"| {i:4} | {a[0]:13s} | {a[1][0]:17} | {a[1][1]:10d} |  {a[1][2]:6d} | {a[1][2]:7d} | {a[1][4]:6.2f} | ")
+    else:
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| Daftar Nilai |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("_______________________________________________________________________________________")
+        print("|  No  |      Nama     |      NIM      |   TUGAS  |   UTS   |   UAS   | Nilai Akhir  |")
+        print("_______________________________________________________________________________________")
+        print("|      |               |             Tidak Ada Data         |         |                |")
+    print("____________________________________________________________________________________________")
+
+
+def hapus():
+    print("Hapus Data Nilai Mahasiswa")
+    nama = input(" Masukan Nama\t:")
+    if nama in data.keys():
+        del data[nama]
+        print()
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("===| BERHASIL MENGHAPUS DATA |===")
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    else:
+        print("Data {0} tidak ada".format(nama))
+
+
+def ubah():
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("===| Edit Data Nilai Mahasiswa |===")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    nama = input("Masukan Nama\t\t: ")
+    print("___________________________________")
+    if nama in data.keys():
+        nim = input("NIM baru\t\t\t: ")
+        tugas = int(input("Nilai Tugas Baru\t: "))
+        uts = int(input("Nilai UTS Baru\t\t: "))
+        uas = int(input("Nilai UAS Baru\t\t: "))
+        nilaiakhir = (tugas * 30 / 100 + uts * 35 / 100 + uas * 35 / 100)
+        data[nama] = nim, tugas, uts, uas, nilaiakhir
+        print()
+        print("<><><><><><><><><><><><><><><><>")
+        print("====| BERHASIL MENGUBAH DATA |====")
+        print("<><><><><><><><><><><><><><><><>")
+    else:
+        print("Data nilai {0} tidak ada ".format(nama))
+
+
+while True:
+    print("")
+    print("|_<><><><><><><><><><><><><><><><><>_|")
+    print("|~~~~~~~~| DATA MAHASISWA |~~~~~~~~~~|")
+    print("|_<><><><><><><><><><><><><><><><><>_|")
+    x = input("1.| Lihat Data \n2.| Tambah Data \n3.| Ubah Data \n4.| Hapus Data \n0.| Keluar Aplikasi \nPilih menu : ")
+    if x.lower() == "1":
+        tampilkan()
+    elif x.lower() == "2":
+        tambah()
+    elif x.lower() == "3":
+        ubah()
+    elif x.lower() == "4":
+        hapus()
+    elif x.lower() == "0":
+        print()
+        print("<><><><><><><><><><><><><><><><>")
+        print("====== KELUAR DARI PROGRAM ======")
+        print("<><><><><><><><><><><><><><><><>")
+        break
+
+    else:
+        print()
+        print("<><><><><><><><><><><><><><><><>")
+        print("== Pilihan Anda Tidak Tersedia ==")
+        print("== Pilihlah Menu Yang Tersedia ==")
+        print("<><><><><><><><><><><><><><><><>")
+ ```
+ 
+ * Pada tugas praktikum saya menggunakan fitur function yang ada di Python. Dan menggunakan media penyimpanan data berupa Dictionary
+Saya akan menjelaskan dikit mengenai fitur-fitur yang ada dalam program sederhana saya.
+Ketika program di run pada pertama kali, maka akan muncul tampilan seperti ini :
+![Screenshot (59)](https://user-images.githubusercontent.com/73010098/100848281-7b753000-34b3-11eb-9a11-b170a517472e.png)
+![Screenshot (60)](https://user-images.githubusercontent.com/73010098/100848285-7d3ef380-34b3-11eb-9c3b-9848b9e021e9.png)
+
+Terdapat 5 Pilihan menu, yaitu :
+
+   1 Tambah Data
+   2 Lihat Data
+   3 Ubah Data
+   4 Hapus Data
+   0 Keluar Aplikasi
+   
+* Menambahkan Data <br>
+<img width="897" alt="praktikum 1" src="https://user-images.githubusercontent.com/73053784/100829441-f0d10880-3493-11eb-9c22-afd0235f4835.png">
+
+
+* Lihat Data Nilai Mahasiswa<br>
+System akan menjalankan fitur ini ketika user mengetikkan perintah 2 pada pilihan Pilih Menu (1-2-3-4-5)
+Inilah tampilan fitur Lihat Data :
+![Screenshot (59)](https://user-images.githubusercontent.com/73010098/100848281-7b753000-34b3-11eb-9a11-b170a517472e.png)
+![Screenshot (60)](https://user-images.githubusercontent.com/73010098/100848771-284fad00-34b4-11eb-9bc5-19684c6ac272.png)
+
+* ubah data <br> 
+Pada fitur ini user akan diminta untuk memilih data siapa yang akan diubah dan data apa yang akan dirubah
+Setelah user memilih data, Misalnya user ingin merubah NIM dari mahasiswa dengan nama Ery , Maka akan muncul tampilan seperti ini :
+![Screenshot (59)](https://user-images.githubusercontent.com/73010098/100848281-7b753000-34b3-11eb-9a11-b170a517472e.png)
+![Screenshot (62)](https://user-images.githubusercontent.com/73010098/100849102-a6ac4f00-34b4-11eb-8118-a75df17bc10d.png)
+
+* Fitur Hapus Data Nilai Mahasiswa <br>
+System akan menjalankan fitur ini ketika user mengetikkan perintah 4 pada pilihan Pilih Menu (1-2-3-4-5)
+Sebelum saya menjalankan fitur ini, saya akan menambahkan 1 data lagi dengan nama Ery
+![Screenshot (59)](https://user-images.githubusercontent.com/73010098/100848281-7b753000-34b3-11eb-9a11-b170a517472e.png)
+![Screenshot (63)](https://user-images.githubusercontent.com/73010098/100849221-d3f8fd00-34b4-11eb-9f81-9b14025eea28.png)
+
 
 
 
