@@ -167,7 +167,7 @@ Sebelum saya menjalankan fitur ini, saya akan menambahkan 1 data lagi dengan nam
 ![Screenshot (63)](https://user-images.githubusercontent.com/73010098/100849221-d3f8fd00-34b4-11eb-9f81-9b14025eea28.png)
 
 ## Flowchart
+<img width="408" alt="100194684-b8c44580-2f28-11eb-85c2-8195000946e1" src="https://user-images.githubusercontent.com/73010098/100850520-7ebdeb00-34b6-11eb-8ed5-a9d6c31c5e2f.png">
 
-
-
+## Author Siti Latifah - 312010321
 
