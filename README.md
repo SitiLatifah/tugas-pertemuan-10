@@ -149,27 +149,24 @@ Terdapat 5 Pilihan menu, yaitu :
    0 Keluar Aplikasi
    
 * Menambahkan Data <br>
-<img width="897" alt="praktikum 1" src="https://user-images.githubusercontent.com/73053784/100829441-f0d10880-3493-11eb-9c22-afd0235f4835.png">
-
+![Screenshot (65)](https://user-images.githubusercontent.com/73010098/100850163-09521a80-34b6-11eb-9114-fc658d39b8ef.png)
 
 * Lihat Data Nilai Mahasiswa<br>
 System akan menjalankan fitur ini ketika user mengetikkan perintah 2 pada pilihan Pilih Menu (1-2-3-4-5)
 Inilah tampilan fitur Lihat Data :
-![Screenshot (59)](https://user-images.githubusercontent.com/73010098/100848281-7b753000-34b3-11eb-9a11-b170a517472e.png)
-![Screenshot (60)](https://user-images.githubusercontent.com/73010098/100848771-284fad00-34b4-11eb-9bc5-19684c6ac272.png)
+![Screenshot (64)](https://user-images.githubusercontent.com/73010098/100850025-c8f29c80-34b5-11eb-9920-afa9a01049a5.png)
 
 * ubah data <br> 
 Pada fitur ini user akan diminta untuk memilih data siapa yang akan diubah dan data apa yang akan dirubah
 Setelah user memilih data, Misalnya user ingin merubah NIM dari mahasiswa dengan nama Ery , Maka akan muncul tampilan seperti ini :
-![Screenshot (59)](https://user-images.githubusercontent.com/73010098/100848281-7b753000-34b3-11eb-9a11-b170a517472e.png)
 ![Screenshot (62)](https://user-images.githubusercontent.com/73010098/100849102-a6ac4f00-34b4-11eb-8118-a75df17bc10d.png)
 
 * Fitur Hapus Data Nilai Mahasiswa <br>
 System akan menjalankan fitur ini ketika user mengetikkan perintah 4 pada pilihan Pilih Menu (1-2-3-4-5)
-Sebelum saya menjalankan fitur ini, saya akan menambahkan 1 data lagi dengan nama Ery
-![Screenshot (59)](https://user-images.githubusercontent.com/73010098/100848281-7b753000-34b3-11eb-9a11-b170a517472e.png)
+Sebelum saya menjalankan fitur ini, saya akan menambahkan 1 data lagi dengan nama latifah
 ![Screenshot (63)](https://user-images.githubusercontent.com/73010098/100849221-d3f8fd00-34b4-11eb-9f81-9b14025eea28.png)
 
+## Flowchart
 
 
 
