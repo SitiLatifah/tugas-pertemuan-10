@@ -1,5 +1,5 @@
 # tugas-pertemuan-10
-# labs06danlabs07
+# labs06
 **Nama	   	: Siti Latifah** <br>
 **Nim	  	  : 312010321** <br>
 **Kelas	  	: TI.20.A2** <br>
